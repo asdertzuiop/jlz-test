@@ -4,6 +4,7 @@ import {RouterModule} from "@angular/router";
 import {UserTweetsContainerComponent} from "./user-tweets-container/user-tweets-container.component";
 import {UserTweetsViewComponent} from "./user-tweets-view/user-tweets-view.component";
 import {UserTweetsTableComponent} from "./user-tweets-table/user-tweets-table.component";
+import {UserDetailsViewComponent} from "./user-details-view/user-details-view.component";
 import {CreateTweetModule} from '../create-tweet/create-tweet.module';
 
 @NgModule({
@@ -18,7 +19,7 @@ import {CreateTweetModule} from '../create-tweet/create-tweet.module';
     CommonModule,
     CreateTweetModule,
   ],
-  declarations: [UserTweetsContainerComponent, UserTweetsViewComponent, UserTweetsTableComponent],
+  declarations: [UserTweetsContainerComponent, UserTweetsViewComponent, UserTweetsTableComponent, UserDetailsViewComponent],
 })
 export class UserTweetsModule {
 }

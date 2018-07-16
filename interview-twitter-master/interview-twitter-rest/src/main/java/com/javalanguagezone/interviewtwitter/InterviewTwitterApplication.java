@@ -30,11 +30,11 @@ public class InterviewTwitterApplication {
 
     @Override
     public void run(ApplicationArguments args) {
-      User rogerVer = userRepository.save(new User("rogerkver", "password"));
-      User andreasAntonopoulos = userRepository.save(new User("aantonop", "password"));
-      User vitalikButerin = userRepository.save(new User("VitalikButerin", "password"));
-      User charlieLee = userRepository.save(new User("SatoshiLite", "password"));
-      User satoshiNakamoto = userRepository.save(new User("satoshiNakamoto", "password"));
+      User rogerVer = userRepository.save(new User("rogerkver","Roger Kver", "password"));
+      User andreasAntonopoulos = userRepository.save(new User("aantonop","Andreas Antonopoulos", "password"));
+      User vitalikButerin = userRepository.save(new User("VitalikButerin", "Vitalik Buterin", "password"));
+      User charlieLee = userRepository.save(new User("SatoshiLite","Charlie Lee" , "password"));
+      User satoshiNakamoto = userRepository.save(new User("satoshiNakamoto", "Satoshi Nakamoto", "password"));
 
       vitalikButerin.addFollowing(satoshiNakamoto, rogerVer);
       userRepository.save(vitalikButerin);
@@ -51,6 +51,7 @@ public class InterviewTwitterApplication {
       tweetRepository.save(new Tweet("I created Bitcoin!", satoshiNakamoto));
       tweetRepository.save(new Tweet("I'm an alias", satoshiNakamoto));
       tweetRepository.save(new Tweet("Bitcoin cash is true Bitcoin!", rogerVer));
+      tweetRepository.save(new Tweet("Newest tweet!", rogerVer));
       tweetRepository.save(new Tweet("ETH is all about smart contracts", vitalikButerin));
       tweetRepository.save(new Tweet("Most of the ICO's will fail", andreasAntonopoulos));
       tweetRepository.save(new Tweet("Cryptocurrencies are all about disruption", andreasAntonopoulos));

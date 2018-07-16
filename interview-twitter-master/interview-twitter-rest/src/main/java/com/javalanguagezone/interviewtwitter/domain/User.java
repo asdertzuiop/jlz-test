@@ -29,6 +29,9 @@ public class User implements UserDetails {
   @Column(unique = true)
   private String username;
 
+  @Column(name = "fullName")
+  private String fullName;
+
   @JsonIgnore
   @ManyToMany
   private Set<User> following = new HashSet<>();
@@ -40,9 +43,10 @@ public class User implements UserDetails {
   @JsonIgnore
   private String password;
 
-  public User(String username, String password) {
+  public User(String username, String fullName, String password) {
     this.username = username;
     this.password = password;
+    this.fullName = fullName;
   }
 
   public void addFollowing(User... users){
@@ -73,5 +77,21 @@ public class User implements UserDetails {
   @Override
   public boolean isEnabled() {
     return true;
+  }
+
+  public Long getNumberOfFollowers() {
+    return Long.valueOf(followers.size());
+  }
+
+  public Long getNumberOfFollowings() {
+    return Long.valueOf(following.size());
+  }
+
+  public String getFullName() {
+    return fullName;
+  }
+
+  public void setFullName(String fullName) {
+    this.fullName = fullName;
   }
 }
